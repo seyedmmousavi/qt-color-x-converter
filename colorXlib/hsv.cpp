@@ -1,6 +1,6 @@
 #include "hsv.h"
-#include <QtMath>
 #include "rgb.h"
+#include <QtMath>
 
 int HSV::unused_int = HSV::registerQml();
 
@@ -76,4 +76,11 @@ void HSV::setHSV(qreal h, qreal s, qreal v)
 {
     m_h = h; m_s = s; m_v = v;
     emit colorChanged();
+}
+
+QColor HSV::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
 }

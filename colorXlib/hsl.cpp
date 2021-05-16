@@ -80,3 +80,10 @@ void HSL::setHSL(qreal h, qreal s, qreal l)
     emit colorChanged();
 }
 
+QColor HSL::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
+}
+

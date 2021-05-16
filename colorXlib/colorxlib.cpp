@@ -5,8 +5,6 @@
 #include <QDebug>
 #include "rgb.h"
 
-int ColorXlib::ununsed_val = registerQml();
-
 ColorXlib::ColorXlib(QObject *parent) : QObject(parent)
 {
 

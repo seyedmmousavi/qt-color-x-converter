@@ -3,6 +3,7 @@
 #pragma once
 #include <QObject>
 #include <QDebug>
+#include <QColor>
 #include <QQmlApplicationEngine>
 #include "hsl.h"
 #include "hsv.h"
@@ -45,6 +46,9 @@ public:
     qreal m_r, m_g, m_b;
     Q_INVOKABLE QString string() {
         return QString("R:%1 G:%2 B:%3").arg(m_r).arg(m_g).arg(m_b);
+    }
+    Q_INVOKABLE QColor color() {
+        return QColor(m_r, m_g, m_b);
     }
     RGB(QObject *parent = nullptr): QObject(parent) {}
     static int registerQml()

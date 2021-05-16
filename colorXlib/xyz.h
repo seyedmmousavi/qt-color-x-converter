@@ -2,6 +2,7 @@
 #define XYZ_H
 #include <QObject>
 #include <QDebug>
+#include <QColor>
 #include <QQmlApplicationEngine>
 
 class RGB;
@@ -40,6 +41,7 @@ public:
     Q_INVOKABLE QString string() {
         return QString("X:%1 Y:%2 Z:%3").arg(m_x).arg(m_y).arg(m_z);
     }
+    Q_INVOKABLE QColor color();
     XYZ(QObject *parent = nullptr): QObject(parent) {}
 
     static int registerQml()

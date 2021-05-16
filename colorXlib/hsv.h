@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QDebug>
+#include <QColor>
 #include <QQmlApplicationEngine>
 
 class RGB;
@@ -40,6 +41,7 @@ public:
     Q_INVOKABLE QString string() {
         return QString("H:%1 S:%2 V:%3").arg(m_h).arg(m_s).arg(m_v);
     }
+    Q_INVOKABLE QColor color();
     HSV(QObject *parent = nullptr): QObject(parent) {}
 
     static int registerQml()

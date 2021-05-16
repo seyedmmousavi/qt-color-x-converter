@@ -1,5 +1,6 @@
 #include "lab.h"
 #include "xyz.h"
+#include "rgb.h"
 #include <QtMath>
 
 int LAB::unused_int_a = LAB::registerQml();
@@ -74,4 +75,11 @@ void LAB::setLAB(qreal l, qreal a, qreal b)
 {
     m_l = l; m_a = a; m_b = b;
     emit colorChanged();
+}
+
+QColor LAB::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
 }

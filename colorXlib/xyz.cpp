@@ -100,3 +100,10 @@ HEX *XYZ::hex()
     _rgb->deleteLater();
     return _rgb->hex();
 }
+
+QColor XYZ::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
+}

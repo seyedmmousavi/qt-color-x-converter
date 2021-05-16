@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QQmlApplicationEngine>
+#include <QColor>
 
 class RGB;
 class LAB;
@@ -41,6 +42,7 @@ public:
     Q_INVOKABLE QString string() {
         return QString("C:%1 M:%2 Y:%3 K:%4").arg(m_c).arg(m_m).arg(m_y).arg(m_k);
     }
+    Q_INVOKABLE QColor color();
     CMYK(QObject *parent = nullptr): QObject(parent) {}
 
     static int registerQml()

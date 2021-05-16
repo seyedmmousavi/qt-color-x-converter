@@ -1,5 +1,4 @@
 #include "hex.h"
-#include <QColor>
 #include "rgb.h"
 
 RGB *HEX::rgb()
@@ -56,4 +55,11 @@ void HEX::setValue(QString hex)
 {
     m_value = hex;
     emit colorChanged();
+}
+
+QColor HEX::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
 }

@@ -67,3 +67,10 @@ void CMYK::setCMYK(qreal c, qreal m, qreal y, qreal k)
     m_c = c; m_m = m; m_y = y; m_k = k;
     emit colorChanged();
 }
+
+QColor CMYK::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
+}

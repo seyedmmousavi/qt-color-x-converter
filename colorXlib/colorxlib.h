@@ -24,7 +24,6 @@ private:
 
     QColor m_color;
     ColorType m_colorType;
-    static int ununsed_val;
     static QObject *colorXSingletonProvider(QQmlEngine *engine, QJSEngine *scriptEngine);
 };
 

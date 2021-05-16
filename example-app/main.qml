@@ -11,8 +11,15 @@ Window {
 
     Column {
         spacing: 10
-        Text {
-            text: "Base RGB is R:%1 G:%2 B:%3".arg(0).arg(191).arg(253);
+        Row {
+            spacing: 10
+            Text {
+                text: "Base RGB is R:%1 G:%2 B:%3".arg(0).arg(191).arg(253);
+            }
+            Rectangle {
+                width: 20; height: 20
+                color: ColorX.rgb(0, 191, 253).xyz.color()
+            }
         }
         Rectangle {
             width: parent.width; height: 1; color: "#eee"

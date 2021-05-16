@@ -94,3 +94,10 @@ void HWB::setHWB(qreal h, qreal w, qreal b)
     m_h = h; m_w = w; m_b = b;
     emit colorChanged();
 }
+
+QColor HWB::color()
+{
+    RGB *_rgb = rgb();
+    _rgb->deleteLater();
+    return _rgb->color();
+}
